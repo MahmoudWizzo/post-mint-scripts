@@ -72,7 +72,7 @@ echo "✅ Source list updated."
 
 # Run apt update and log output
 echo "🌐 Running 'sudo apt update'..."
-if ! sudo apt update | tee "$LOG_FILE"; then
+if ! sudo apt update | sudo tee "$LOG_FILE"; then
   echo "❌ 'apt update' failed to run properly."
   print_failure
 fi
